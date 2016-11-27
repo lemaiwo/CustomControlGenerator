@@ -1,0 +1,11 @@
+{
+	"name": "htmltocontrolconverterfeature",
+	"title": "htmltocontrolconverterfeature",
+	"version": "1.0.0",
+	"description": "HTML To Control Converter",
+	"homepage": "",
+	"icon": "",
+	"bundledPlugins": {
+		"htmltocontrolconverterplugin": "file:htmltocontrolconverterplugin"
+	}
+}
