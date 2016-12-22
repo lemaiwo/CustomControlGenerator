@@ -154,7 +154,11 @@ sap.ui.define([
 			// 	return prop.getName().substr(0,param.length) === param?param:"Others";
 			// });
 			var l = 0;
+<<<<<<< HEAD
 			$.each(this.props,function(key,value){
+=======
+			$.each(this.prop,function(key,value){
+>>>>>>> branch 'master' of https://github.com/lemaiwo/CustomControlGenerator.git
 				if(value.getName().substr(0,param.length) === param){
 					l++;
 				}

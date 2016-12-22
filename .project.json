@@ -27,8 +27,14 @@
     "resourceModelName": "i18n"
   },
   "hcpdeploy": {
+<<<<<<< HEAD
     "account": "a6ac3f497",
     "name": "htmltocontrolconverter",
     "lastVersionWeTriedToDeploy": "3"
+=======
+    "account": "p935700trial",
+    "name": "htmltocontrolconverter",
+    "lastVersionWeTriedToDeploy": "1.0.3"
+>>>>>>> branch 'master' of https://github.com/lemaiwo/CustomControlGenerator.git
   }
 }

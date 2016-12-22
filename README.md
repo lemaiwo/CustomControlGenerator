@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Custom UI5 Control Generator
 
 I've created a plugin for the SAPWebIDE to generate custom SAPUI5/OpenUI5 controls based on HTML. The goal of this plugin is to:
@@ -44,3 +45,7 @@ As this is a plugin from me as a developer to help you as a developer. If you ha
 #Contact
 
 Your always welcome to update me about bugs at wouterlemaire120@hotmail.com
+=======
+# CustomControlGenerator
+Custom UI5 Control Generator
+>>>>>>> branch 'master' of https://github.com/lemaiwo/CustomControlGenerator.git
