@@ -1,0 +1,11 @@
+#
+#Wed Dec 21 13:47:34 UTC 2016
+Description=My Feature
+Type=HTTP
+Authentication=NoAuthentication
+WebIDEUsage=feature
+Name=FeatureUI5ControlGenerator
+WebIDEEnabled=true
+CloudConnectorVersion=2
+URL=https\://htmltocontrolconverter-p935700trial.dispatcher.hanatrial.ondemand.com
+ProxyType=Internet

@@ -1,0 +1,11 @@
+{
+	"name": "htmltocontrolconverterfeature",
+	"title": "UI5 Control Generator",
+	"version": "1.0.0",
+	"description": "UI5 Control Generator based on HTML",
+	"homepage": "",
+	"icon": "",
+	"bundledPlugins": {
+		"htmltocontrolconverterplugin": "file:htmltocontrolconverterplugin"
+	}
+}
