@@ -5,10 +5,7 @@
 				<content>
 				    <Button text="Convert" width="100px" press="onConvert"/>
 				    <TextArea value="{/html}" rows="20" cols="100"/>
-<<<<<<< HEAD
 				    <Link target="_blank" href="https://blogs.sap.com/2016/11/27/custom-ui5-control-generator-sap-web-ide-plugin/" text="Help"/>
-=======
->>>>>>> branch 'master' of https://github.com/lemaiwo/CustomControlGenerator.git
 				</content>
 			</Page>
 		</pages>

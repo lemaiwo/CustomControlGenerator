@@ -1,5 +1,3 @@
-
-<<<<<<< HEAD
 UIAdaptation_index.html
 changes_preview.js
 visual_ext_index.html
@@ -11,16 +9,3 @@ mock_preview_sapui5.html
 sap-ui-cachebuster-info.json
 extended_runnable_file.html
 .*/extended_runnable_file.html
-=======
-sap-ui-cachebuster-info.json
-extended_runnable_file.html
-.*/extended_runnable_file.html
-visual_ext_index.html
-/webapp/visual_ext_index.html
-UIAdaptation_index.html
-changes_preview.js
-fioriHtmlRunner.html
-.*/fioriHtmlRunner.html
-mock_preview_sapui5.html
-.*/mock_preview_sapui5.html
->>>>>>> branch 'master' of https://github.com/lemaiwo/CustomControlGenerator.git

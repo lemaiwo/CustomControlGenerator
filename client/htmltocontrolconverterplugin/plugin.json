@@ -1,91 +1,60 @@
 {
-  "name": "htmltocontrolconverterplugin",
-<<<<<<< HEAD
-  "description": "A Plugin that will help you by generating UI5 custom controls based on HTML",
-  "i18n": "htmltocontrolconverterplugin/i18n/i18n",
-  "requires": {
-    "services": [
-      "perspective",
-      "content",
-      "command",
-      "commandGroup"
-    ]
-  },
-  "provides": {
-    "services": {
-      "serviceforrightpane" : {
-        "implements": "sap.watt.common.service.ui.Part",
-        "module" : "htmltocontrolconverterplugin/service/RightPanePart"
-      }
-    }
-  },
-  "configures": {
-    "services": {
-      "perspective:views": [
-        { "id": "serviceforrightpane", "service": "@serviceforrightpane"}
-      ],
-      "perspective:viewToAreaMapping": [
-        { "view": "serviceforrightpane", "perspective": "development", "area": "right"}
-      ],
-      "command:commands" : [
-        {
-          "id" : "rightpanetogglestatecommand",
-          "label" : "{i18n>command_label}.",
-          "icon" : "sap-icon://developer-settings",
-=======
-  "description": "a plugin that adds a right-side pane to the development perspective",
-  "i18n": "htmltocontrolconverterplugin/i18n/i18n",
-  "requires": {
-    "services": [
-      "perspective",
-      "content",
-      "command",
-      "commandGroup"
-    ]
-  },
-  "provides": {
-    "services": {
-      "serviceforrightpane" : {
-        "implements": "sap.watt.common.service.ui.Part",
-        "module" : "htmltocontrolconverterplugin/service/RightPanePart"
-      }
-    }
-  },
-  "configures": {
-    "services": {
-      "perspective:views": [
-        { "id": "serviceforrightpane", "service": "@serviceforrightpane"}
-      ],
-      "perspective:viewToAreaMapping": [
-        { "view": "serviceforrightpane", "perspective": "development", "area": "right"}
-      ],
-      "command:commands" : [
-        {
-          "id" : "rightpanetogglestatecommand",
-          "label" : "{i18n>command_label}.",
-          "icon" : "sap-icon://tag-cloud-chart",
->>>>>>> branch 'master' of https://github.com/lemaiwo/CustomControlGenerator.git
-          "service": {
-            "implements" : "sap.watt.common.service.ide.AbstractUIPartToggler",
-            "module" : "sap.watt.common.perspective/command/AbstractUIPartToggler",
-            "configuration" : { "id" : "rightpanetogglestatecommand", "service" : "@serviceforrightpane", "perspective" : "development"}
-          },
-          "keyBinding": "mod+shift+8"
-        }
-      ],
+	"name": "htmltocontrolconverterplugin",
+	"description": "A Plugin that will help you by generating UI5 custom controls based on HTML",
+	"i18n": "htmltocontrolconverterplugin/i18n/i18n",
+	"requires": {
+		"services": [
+			"perspective",
+			"content",
+			"command",
+			"commandGroup"
+		]
+	},
+	"provides": {
+		"services": {
+			"serviceforrightpane": {
+				"implements": "sap.watt.common.service.ui.Part",
+				"module": "htmltocontrolconverterplugin/service/RightPanePart"
+			}
+		}
+	},
+	"configures": {
+		"services": {
+			"perspective:views": [{
+				"id": "serviceforrightpane",
+				"service": "@serviceforrightpane"
+			}],
+			"perspective:viewToAreaMapping": [{
+				"view": "serviceforrightpane",
+				"perspective": "development",
+				"area": "right"
+			}],
+			"command:commands": [{
+				"id": "rightpanetogglestatecommand",
+				"label": "{i18n>command_label}.",
+				"icon": "sap-icon://developer-settings",
+				"service": {
+					"implements": "sap.watt.common.service.ide.AbstractUIPartToggler",
+					"module": "sap.watt.common.perspective/command/AbstractUIPartToggler",
+					"configuration": {
+						"id": "rightpanetogglestatecommand",
+						"service": "@serviceforrightpane",
+						"perspective": "development"
+					}
+				},
+				"keyBinding": "mod+shift+8"
+			}],
 
-      "commandGroup:items": [
-                {
-                	"parent": "applicationRightSidebar",
-                	"command": "rightpanetogglestatecommand",
-                	"prio": 101
-                },{
-                	"parent": "view",
-                	"command": "rightpanetogglestatecommand",
-                	"prio": 101
-                }
-       ]
+			"commandGroup:items": [{
+				"parent": "applicationRightSidebar",
+				"command": "rightpanetogglestatecommand",
+				"prio": 101
+			}, {
+				"parent": "view",
+				"command": "rightpanetogglestatecommand",
+				"prio": 101
+			}]
 
-    }
-  }
+		}
+	}
 }
