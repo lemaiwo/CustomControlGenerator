@@ -39,7 +39,7 @@ See how it works in this video: <a href="https://youtu.be/9FdPw-26fSg" target="_
 
 #Contribute
 
-As this is a plugin from me as a developer to help you as a developer. If you have a great idea or just want to help your welcome to help me improving this plugin!
+This is a plugin from me as a developer to help you as a developer. If you have a great idea or just want to help your welcome to help me improving this plugin!
 
 #Contact
 
