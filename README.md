@@ -15,6 +15,7 @@ See how it works in this video: <a href="https://youtu.be/9FdPw-26fSg" target="_
 
 ##Create destination
 
+Create a file without extension and past the following lines in the file:
 ```
 Description=My Feature
 Type=HTTP
