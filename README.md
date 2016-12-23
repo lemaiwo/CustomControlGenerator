@@ -15,7 +15,17 @@ See how it works in this video: <a href="https://youtu.be/9FdPw-26fSg" target="_
 
 ##Download destination
 
-<a href="https://raw.githubusercontent.com/lemaiwo/CustomControlGenerator/master/resources/FeatureUI5ControlGenerator" target="_blank" download="FeatureUI5ControlGenerator">Download</a>
+```
+Description=My Feature
+Type=HTTP
+Authentication=NoAuthentication
+WebIDEUsage=feature
+Name=FeatureUI5ControlGenerator
+WebIDEEnabled=true
+CloudConnectorVersion=2
+URL=https\://htmltocontrolconverter-p935700trial.dispatcher.hanatrial.ondemand.com
+ProxyType=Internet
+```
 
 ##Import destination
 
