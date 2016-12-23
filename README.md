@@ -5,8 +5,9 @@ I've created a plugin for the SAPWebIDE to generate custom SAPUI5/OpenUI5 contro
 2. Speed up the development of custom controls
 3. Save time! 
 4. Less typing :)
+5. Make everything a control
 
-See how it works in this video: <a href="https://youtu.be/9FdPw-26fSg" target="_blank"></a>
+See how it works in this video: <a href="https://youtu.be/9FdPw-26fSg" target="_blank">How to use the plugin</a>
 
 
 
@@ -14,7 +15,7 @@ See how it works in this video: <a href="https://youtu.be/9FdPw-26fSg" target="_
 
 ##Download destination
 
-
+<a href="https://github.com/lemaiwo/CustomControlGenerator/blob/master/resources/FeatureUI5ControlGenerator"  target="_blank">Download</a>
 
 ##Import destination
 
@@ -24,6 +25,7 @@ See how it works in this video: <a href="https://youtu.be/9FdPw-26fSg" target="_
 4. Import Destination
 5. Save
  
+<img src="https://github.com/lemaiwo/CustomControlGenerator/blob/master/resources/import.png"/>
 
 ##SAPWebIDE Settings
 
@@ -34,8 +36,11 @@ See how it works in this video: <a href="https://youtu.be/9FdPw-26fSg" target="_
 5. Enable the UI5 Control Generator
 6. Restart the SAPWebIDE
 
+<img src="https://github.com/lemaiwo/CustomControlGenerator/blob/master/resources/settings.png"/>
 
 ##Result
+
+<img src="https://github.com/lemaiwo/CustomControlGenerator/blob/master/resources/result.png"/>
 
 #Contribute
 
