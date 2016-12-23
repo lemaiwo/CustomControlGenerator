@@ -53,16 +53,10 @@ ProxyType=Internet
 
 <img src="https://github.com/lemaiwo/CustomControlGenerator/blob/master/resources/result.png"/>
 
-<img src="https://github.com/lemaiwo/CustomControlGenerator/blob/master/resources/result.png"/>
-
 #Contribute
 
 This is a plugin from me as a developer to help you as a developer. If you have a great idea or just want to help your welcome to help me improving this plugin!
 
 #Contact
 
-<<<<<<< HEAD
 You're always welcome to update me about bugs at wouterlemaire120@hotmail.com
-=======
-You're always welcome to update me about bugs at wouterlemaire120@hotmail.com
->>>>>>> c82a3f705ce2f8ec5118b47ae2769f6abd995c65
