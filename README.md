@@ -14,7 +14,11 @@ See how it works in this video: <a href="https://youtu.be/9FdPw-26fSg" target="_
 #Getting started
 
 ##Download destination
+<<<<<<< HEAD
+<a href="https://raw.githubusercontent.com/lemaiwo/CustomControlGenerator/master/resources/FeatureUI5ControlGenerator" target="_blank">Download</a>
+=======
 
+>>>>>>> branch 'master' of https://github.com/lemaiwo/CustomControlGenerator.git
 <a href="https://github.com/lemaiwo/CustomControlGenerator/blob/master/resources/FeatureUI5ControlGenerator"  target="_blank">Download</a>
 
 ##Import destination
@@ -42,10 +46,12 @@ See how it works in this video: <a href="https://youtu.be/9FdPw-26fSg" target="_
 
 <img src="https://github.com/lemaiwo/CustomControlGenerator/blob/master/resources/result.png"/>
 
+<img src="https://github.com/lemaiwo/CustomControlGenerator/blob/master/resources/result.png"/>
+
 #Contribute
 
 This is a plugin from me as a developer to help you as a developer. If you have a great idea or just want to help your welcome to help me improving this plugin!
 
 #Contact
 
-Your always welcome to update me about bugs at wouterlemaire120@hotmail.com
+You're always welcome to update me about bugs at wouterlemaire120@hotmail.com
