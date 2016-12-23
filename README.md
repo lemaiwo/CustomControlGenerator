@@ -13,7 +13,7 @@ See how it works in this video: <a href="https://youtu.be/9FdPw-26fSg" target="_
 
 #Getting started
 
-##Download destination
+##Create destination
 
 ```
 Description=My Feature
@@ -32,7 +32,7 @@ ProxyType=Internet
 1. Open your HANA Cloud Platform Cockpit
 2. Go to Connectivity
 3. Open Destinations
-4. Import Destination
+4. Import the created destination
 5. Save
  
 <img src="https://github.com/lemaiwo/CustomControlGenerator/blob/master/resources/import.png"/>
