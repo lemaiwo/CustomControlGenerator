@@ -15,7 +15,7 @@ See how it works in this video: <a href="https://youtu.be/9FdPw-26fSg" target="_
 
 ##Download destination
 
-<a href="https://raw.githubusercontent.com/lemaiwo/CustomControlGenerator/master/resources/FeatureUI5ControlGenerator" target="_blank" Download>Download</a>
+<a href="https://raw.githubusercontent.com/lemaiwo/CustomControlGenerator/master/resources/FeatureUI5ControlGenerator" target="_blank" download="FeatureUI5ControlGenerator">Download</a>
 
 ##Import destination
 
