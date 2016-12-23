@@ -8,11 +8,11 @@ I've created a plugin for the SAPWebIDE to generate custom SAPUI5/OpenUI5 contro
 5. Make everything a control
 
 See how it works in this video:
-
+<p align="center">
 <a href="https://youtu.be/9FdPw-26fSg" target="_blank">
 <img src="http://img.youtube.com/vi/9FdPw-26fSg/0.jpg" 
-alt="How to use the SAPWebIDE Plugin" width="240" height="180" border="10" /></a>
-
+alt="How to use the SAPWebIDE Plugin" width="640" height="360" /></a>
+</p>
 
 #Getting started
 
