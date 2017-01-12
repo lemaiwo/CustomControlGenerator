@@ -30,7 +30,11 @@ sap.ui.define([
 				// 	data.getProject().then(function(project) {
 				//project.createFolder
 				//project.createFile
-				var jsonhtml = JSONG.generateJSON(data.html);
+				var html = = data.html.replace(/\n/g, "")
+							    .replace(/[\t ]+\</g, "<")
+							    .replace(/\>[\t ]+\</g, "><")
+							    .replace(/\>[\t ]+$/g, ">");
+				var jsonhtml = JSONG.generateJSON(html);
 				 document.setContent( cg.generateControl(JSON.parse(jsonhtml)));
 				//document.setContent( JSONG.generateJSON(data.html));
 				// 	});
