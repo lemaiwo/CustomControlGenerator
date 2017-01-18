@@ -27,7 +27,7 @@ WebIDEUsage=feature
 Name=FeatureUI5ControlGenerator
 WebIDEEnabled=true
 CloudConnectorVersion=2
-URL=https\://htmltocontrolconverter-p935700trial.dispatcher.hanatrial.ondemand.com
+URL=https\://htmltocontrolconverter-a6ac3f497.dispatcher.hana.ondemand.com
 ProxyType=Internet
 ```
 
