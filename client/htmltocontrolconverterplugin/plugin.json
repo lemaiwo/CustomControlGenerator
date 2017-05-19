@@ -12,7 +12,7 @@
 	},
 	"provides": {
 		"services": {
-			"serviceforrightpane": {
+			"serviceforrightpaneui": {
 				"implements": "sap.watt.common.service.ui.Part",
 				"module": "htmltocontrolconverterplugin/service/RightPanePart"
 			}
@@ -21,11 +21,11 @@
 	"configures": {
 		"services": {
 			"perspective:views": [{
-				"id": "serviceforrightpane",
-				"service": "@serviceforrightpane"
+				"id": "serviceforrightpaneview",
+				"service": "@serviceforrightpaneui"
 			}],
 			"perspective:viewToAreaMapping": [{
-				"view": "serviceforrightpane",
+				"view": "serviceforrightpaneview",
 				"perspective": "development",
 				"area": "right"
 			}],
@@ -38,7 +38,7 @@
 					"module": "sap.watt.common.perspective/command/AbstractUIPartToggler",
 					"configuration": {
 						"id": "rightpanetogglestatecommand",
-						"service": "@serviceforrightpane",
+						"service": "@serviceforrightpaneui",
 						"perspective": "development"
 					}
 				},
