@@ -13,7 +13,7 @@ sap.ui.define([
 		getJSON: function() {
 			return this._json;
 		},
-		generateControl: function(json) {
+		generateControl: function(json,name) {
 			if (json) {
 				this.setJSON(json);
 			}
@@ -25,7 +25,7 @@ sap.ui.define([
 			var renderer = this.generateRendererFn();
 
 			var controlStr = [];
-			controlStr.push(this.generateBeginControl());
+			controlStr.push(this.generateBeginControl(name));
 			controlStr.push(this.generateMetadata());
 			controlStr.push(",");
 			controlStr.push(this.generateInitFn());
@@ -40,12 +40,15 @@ sap.ui.define([
 			controlStr.push(this.generateEndControl());
 			return controlStr.join(" ");
 		},
-		generateBeginControl: function() {
+		generateBeginControl: function(name) {
+			if(!name || (name && name === "")){
+				name = "namespace.ControlName";
+			}
 			var begin = "sap.ui.define([";
 			begin += "\"sap/ui/core/Control\"";
 			begin += "], function(Control) {";
 			begin += "\"use strict\";";
-			begin += "return Control.extend(\"namespace.ControlName\", {";
+			begin += "return Control.extend(\""+name+"\", {";
 			return begin;
 		},
 		generateEndControl: function() {

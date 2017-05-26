@@ -3,7 +3,7 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"htmltocontrolconverterplugin/utils/JSONGenerator",
 	"htmltocontrolconverterplugin/utils/ControlGenerator"
-], function(Controller, JSONModel,JSONGenerator,ControlGenerator) {
+], function(Controller, JSONModel, JSONGenerator, ControlGenerator) {
 	"use strict";
 
 	return Controller.extend("htmltocontrolconverterplugin.view.controller.RightPaneView", {
@@ -17,29 +17,47 @@ sap.ui.define([
 			this.getView().setModel(new JSONModel({
 				html: "<div class=\"example\" style=\"width:100px;height:250px;\"></div>"
 			}));
+			String.prototype.replaceAll = function(find, replace) {
+				var str = this;
+				return str.replace(new RegExp(find, 'g'), replace);
+			};
 		},
 		onConvert: function() {
 			var v = this.getView();
-			var c = v.getViewData().context;
+			this.c = v.getViewData().context;
 			var data = this.getView().getModel().getData();
 			var me = this;
 
 			var JSONG = new JSONGenerator();
-			var cg = new ControlGenerator();
-			c.service.content.getCurrentDocument().then(function(document) {
-				// 	data.getProject().then(function(project) {
-				//project.createFolder
-				//project.createFile
-				var html = data.html.replace(/\n/g, "")
-							    .replace(/[\t ]+\</g, "<")
-							    .replace(/\>[\t ]+\</g, "><")
-							    .replace(/\>[\t ]+$/g, ">");
-				var jsonhtml = JSONG.generateJSON(html);
-				 document.setContent( cg.generateControl(JSON.parse(jsonhtml)));
-				//document.setContent( JSONG.generateJSON(data.html));
-				// 	});
+			var html = data.html.replace(/\n/g, "")
+				.replace(/[\t ]+\</g, "<")
+				.replace(/\>[\t ]+\</g, "><")
+				.replace(/\>[\t ]+$/g, ">");
+			var jsonhtml = JSONG.generateJSON(html);
+			me.c.service.content.getCurrentDocument().then(function(document) {
+				me.c.service.ui5projecthandler.getAppNamespace(document).then(function(namespace) {
+					//console.log(namespace+pathAndName);
+					me.generateContent(namespace, jsonhtml, document);
+				}, function(error) {
+					me.generateContent("", jsonhtml, document);
+				});
+
 			});
-		}
+		},
+		generateContent: function(namespace, jsonhtml, document) {
+				var cg = new ControlGenerator();
+
+				var e = document.getEntity();
+				var pathAndName = e.getFullPath().substr(0, e.getFullPath().indexOf(".")).substr(e.getFullPath().indexOf("webapp") + 6).replaceAll(
+					"/", ".");
+				var sContent = cg.generateControl(JSON.parse(jsonhtml), namespace + pathAndName);
+
+				this.c.service.beautifierProcessor.beautify(sContent, "js").then(function(sFormattedChange) {
+					return document.setContent(sFormattedChange).then(function() {
+						return document.save();
+					});
+				});
+			}
 			/**
 			 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
 			 * (NOT before the first rendering! onInit() is used for that one!).

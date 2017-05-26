@@ -4,6 +4,8 @@
 	"i18n": "htmltocontrolconverterplugin/i18n/i18n",
 	"requires": {
 		"services": [
+			"ui5projecthandler",
+			"beautifierProcessor",
 			"perspective",
 			"content",
 			"command",
