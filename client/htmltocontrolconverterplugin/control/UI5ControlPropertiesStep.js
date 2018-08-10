@@ -38,20 +38,28 @@ define(["sap.watt.ideplatform.template/ui/wizard/WizardStepContent",
 			_createPageLayoutConfigurationContent: function () {
 				var me = this;
 				//core step which creates all UI elements and its logic.
-				var oItemTemplate = new sap.m.InputListItem({
-					label: "{_name}",
-					content: [new sap.m.Input({
+				var oColTemplate1 = new sap.ui.table.Column({
+					width:"50%",
+					label:  new sap.m.Label({text:"Generated name"}),
+					template: [new sap.m.Text({
+						text: "{_name}"
+					})]
+				});
+				var oColTemplate2 = new sap.ui.table.Column({
+					width:"50%",
+					label:  new sap.m.Label({text:"Custom name"}),
+					template: [new sap.m.Input({
 						value: "{value}"
 					})]
 				});
-				var oList = new sap.m.List({
-					items: {
+				var oTable = new sap.ui.table.Table({
+					rows: {
 						path: "/Properties",
-						template: oItemTemplate
-					}
+					},
+					selectionMode:"None",
+					columns:[oColTemplate1,oColTemplate2]
 				});
-
-				return oList;
+				return oTable;
 
 			},
 			validateStepContent: function () {

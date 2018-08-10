@@ -152,7 +152,7 @@ sap.ui.define([
 					return aMapping._name === sTempPropName;
 				});
 			}
-			var p = new Property(aFoundName && aFoundName.length > 0 ? aFoundName[0].value : sTempPropName);
+			var p = new Property(sTempPropName,aFoundName && aFoundName.length > 0 ? aFoundName[0].value : sTempPropName);
 			this.props.push(p);
 			return "oRm.writeEscaped(oControl." + p.generateFnName("get") + "());";
 		},
@@ -171,7 +171,7 @@ sap.ui.define([
 			// });
 			var l = 0;
 			$.each(this.props, function (key, value) {
-				if (value.getName().substr(0, param.length) === param) {
+				if (value.getKey().substr(0, param.length) === param) {
 					l++;
 				}
 			});

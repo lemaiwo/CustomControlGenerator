@@ -3,15 +3,22 @@ sap.ui.define([
 ], function(Object) {
 	"use strict";
 	return Object.extend("htmltocontrolconverterplugin.utils.PropertyGenerator", {
-	    constructor: function(name) {
+	    constructor: function(key,name) {
 			this.setName(name);
+			this.setKey(key);
 			// this.setValue(value);
 		},
 		setName:function(name){
 			this._name = name;
 		},
+		setKey:function(key){
+			this._key = key;
+		},
 		getName:function(){
 			return this._name;
+		},
+		getKey:function(){
+			return this._key;
 		},
 		// setValue:function(value){
 		// 	this._value = value;
