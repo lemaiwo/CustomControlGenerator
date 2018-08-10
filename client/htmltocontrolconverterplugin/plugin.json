@@ -9,7 +9,12 @@
 			"perspective",
 			"content",
 			"command",
-			"commandGroup"
+			"commandGroup",
+        	"wizard",
+            "template",
+            "templateCustomizationStep",
+            "componentConfirmStep",
+            "log"
 		]
 	},
 	"provides": {
@@ -17,6 +22,14 @@
 			"serviceforrightpaneui": {
 				"implements": "sap.watt.common.service.ui.Part",
 				"module": "htmltocontrolconverterplugin/service/RightPanePart"
+			},
+			"UI5ControlHTMLStep": {
+				"implements": "sap.watt.common.service.ui.WizardStep",
+				"module": "htmltocontrolconverterplugin/service/UI5ControlHTMLStep"
+			},
+			"UI5ControlPropertiesStep": {
+				"implements": "sap.watt.common.service.ui.WizardStep",
+				"module": "htmltocontrolconverterplugin/service/UI5ControlPropertiesStep"
 			}
 		}
 	},
@@ -55,8 +68,34 @@
 				"parent": "view",
 				"command": "rightpanetogglestatecommand",
 				"prio": 101
-			}]
-
+			}],
+            "template:templates": [
+                {
+                    "id": "htmltocontrolconverterplugin.wizard",
+                    "template": "htmltocontrolconverterplugin/controlgenerator/controlgenerator",
+                    "name": "{i18n>Config_template_controlgenerator_name}",
+                    "description": "{i18n>Config_template_controlgenerator_desc}",
+                    "path": "htmltocontrolconverterplugin/controlgenerator",
+                    "icon": "sap-icon://detail-view",
+                    "internalOnly": false,
+                    "category": "SAP.Fiori.Application",
+                    "wizardSteps": [
+                    	"templateCustomizationStep",
+                        "UI5ControlHTMLStep",
+                        "UI5ControlPropertiesStep",
+                        "componentConfirmStep"
+                    ],
+                    "templateType": "component",
+                    "requiresNeoApp": false,
+                    "version": "1.0.0",
+                    "orderPriority": 1000,
+                    "modelRoot": "UI5Control",
+                    "modelFileName": "model.json",
+                    "fileName": "resources.zip",
+                    "beautifyFiles":true,
+                    "supportedProjectTypes":["sap.watt.uitools.ide.fiori"]
+                }
+            ]
 		}
 	}
 }

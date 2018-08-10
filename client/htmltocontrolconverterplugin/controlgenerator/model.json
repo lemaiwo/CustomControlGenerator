@@ -1,0 +1,38 @@
+{
+	"UI5Control": {
+		"parameters": {
+			"namespace": {
+				"type": "string",
+				"value": "",
+				"wizard": {
+					"control": "TextField",
+					"required": false,
+					"title": "basicSAPUI5ApplicationProject_namespace_title",
+					"tooltip": "basicSAPUI5ApplicationProject_view_namespace_tooltip",
+					"regExp": "(?!(sap|new(\\..*)*)$)^[a-zA-Z_][\\w-]*(\\.[a-zA-Z_][\\w-]*)*$",
+					"regExpErrMsg": "nameSpace_model_parameters_name_validationError"
+				}
+			},
+			"name": {
+				"type": "string",
+				"value": "",
+				"wizard": {
+					"control": "TextField",
+					"required": true,
+					"title": "basicSAPUI5ApplicationProject_view_name_title",
+					"regExp": "^[a-zA-Z_]+[a-zA-Z0-9\\-_]*$",
+					"regExpErrMsg": "viewXML_model_parameters_name_validationError"
+				}
+			}
+		},
+		"forms": [{
+			"title": "",
+			"type": "templateCustomizationStep",
+			"groups": [{
+				"title": "emptyMobileProject_model_form_group_title",
+				"parameters": ["@UI5Control.parameters.namespace", "@UI5Control.parameters.name"
+				]
+			}]
+		}]
+	}
+}
