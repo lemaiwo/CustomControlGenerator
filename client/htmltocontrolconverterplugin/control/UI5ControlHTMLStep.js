@@ -17,7 +17,7 @@ define(["sap.watt.ideplatform.template/ui/wizard/WizardStepContent",
 			renderer: {},
 
 			onBeforeRendering: function () {
-				this.getModel().setProperty("/htmltemplate","<test/>");
+				// this.getModel().setProperty("/htmltemplate","<test/>");
 
 			},
 
