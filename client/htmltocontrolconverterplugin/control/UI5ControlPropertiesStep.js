@@ -22,17 +22,6 @@ define(["sap.watt.ideplatform.template/ui/wizard/WizardStepContent",
 				this.fireValidation({
 					isValid: true
 				});
-				var html = this.getModel().getProperty("/htmltemplate");
-
-				var JSONG = new htmltocontrolconverterplugin.utils.JSONGenerator();
-				html = html.replace(/\n/g, "")
-					.replace(/[\t ]+\</g, "<")
-					.replace(/\>[\t ]+\</g, "><")
-					.replace(/\>[\t ]+$/g, ">");
-				var jsonhtml = JSONG.generateJSON(html);
-				var cg = new htmltocontrolconverterplugin.utils.ControlGenerator(JSON.parse(jsonhtml));
-				var aProps = cg.getAllProperties();
-				this.getModel().setProperty("/Properties", aProps);
 			},
 
 			_createPageLayoutConfigurationContent: function () {

@@ -161,7 +161,13 @@ sap.ui.define([
 				return;
 			}
 			var l = this.getParamCount(attr);
-			var p = new Property(attr + (++l));
+			var sTempAttrName = attr + (++l);
+			if (this._aMappings) {
+				var aFoundName = this._aMappings.filter(function (aMapping) {
+					return aMapping._name === sTempAttrName;
+				});
+			}
+			var p = new Property(sTempAttrName,aFoundName && aFoundName.length > 0 ? aFoundName[0].value : sTempAttrName);
 			this.props.push(p);
 			return "oRm.writeAttributeEscaped(\"" + attr + "\",oControl." + p.generateFnName("get") + "());";
 		},
