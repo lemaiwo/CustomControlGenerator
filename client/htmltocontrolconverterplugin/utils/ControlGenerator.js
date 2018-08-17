@@ -20,7 +20,7 @@ sap.ui.define([
 		setMappingTable: function (aMappings) {
 			this._aMappings = aMappings;
 		},
-		generateControl: function (json, name) {
+		generateControl: function (json, name, skipRenderer) {
 			if (json) {
 				this.setJSON(json);
 			}
@@ -37,8 +37,10 @@ sap.ui.define([
 			controlStr.push(",");
 			controlStr.push(this.generateInitFn());
 			controlStr.push(",");
-			controlStr.push(renderer);
-			controlStr.push(",");
+			if (!skipRenderer) {
+				controlStr.push(renderer);
+				controlStr.push(",");
+			}
 			controlStr.push(this.generateAfterRenderingFn());
 			if (this.props && this.props.length > 0) {
 				controlStr.push(",");
@@ -57,6 +59,29 @@ sap.ui.define([
 			begin += "\"use strict\";";
 			begin += "return Control.extend(\"" + name + "\", {";
 			return begin;
+		},
+		generateSeperateRenderer: function (json, name) {
+			if (json) {
+				this.setJSON(json);
+			}
+			if (!this.getJSON()) {
+				console.log("No JSON available!");
+				return;
+			}
+			if (!name || (name && name === "")) {
+				name = "namespace.ControlName";
+			}
+			this._firstTime = true;
+			var sControlName = name.substr(name.lastIndexOf(".") + 1);
+			var sRenderer = "sap.ui.define([], function() {";
+			sRenderer += "\"use strict\";";
+			sRenderer += "var " + sControlName + " = {};";
+			sRenderer += sControlName + ".render = function(oRm, oControl) {";
+			sRenderer += this.renderControl(this.getJSON());
+			sRenderer += "};";
+			sRenderer += "return " + sControlName + ";";
+			sRenderer += "},true);";
+			return sRenderer;
 		},
 		generateEndControl: function () {
 			var end = "});});";
@@ -152,7 +177,7 @@ sap.ui.define([
 					return aMapping._name === sTempPropName;
 				});
 			}
-			var p = new Property(sTempPropName,aFoundName && aFoundName.length > 0 ? aFoundName[0].value : sTempPropName);
+			var p = new Property(sTempPropName, aFoundName && aFoundName.length > 0 ? aFoundName[0].value : sTempPropName);
 			this.props.push(p);
 			return "oRm.writeEscaped(oControl." + p.generateFnName("get") + "());";
 		},
@@ -167,7 +192,7 @@ sap.ui.define([
 					return aMapping._name === sTempAttrName;
 				});
 			}
-			var p = new Property(sTempAttrName,aFoundName && aFoundName.length > 0 ? aFoundName[0].value : sTempAttrName);
+			var p = new Property(sTempAttrName, aFoundName && aFoundName.length > 0 ? aFoundName[0].value : sTempAttrName);
 			this.props.push(p);
 			return "oRm.writeAttributeEscaped(\"" + attr + "\",oControl." + p.generateFnName("get") + "());";
 		},

@@ -67,8 +67,14 @@ define(["sap/watt/lib/jszip/jszip-shim", "sap/watt/lib/lodash/lodash",
 				} else {
 					model.controlNamespace = sControlNamespace + "control." + controlName;
 				}
-				var sContent = cg.generateControl(JSON.parse(jsonhtml), model.controlNamespace);
+				var sContent = cg.generateControl(JSON.parse(jsonhtml), model.controlNamespace, model.UI5Control.parameters.renderer.value);
 				newZip.file("control/" + controlName + ".js", sContent);
+				if (model.UI5Control.parameters.renderer.value) {
+					var sepcg = new htmltocontrolconverterplugin.utils.ControlGenerator();
+					sepcg.setMappingTable(model.Properties);
+					var sSeperateControl = sepcg.generateSeperateRenderer(JSON.parse(jsonhtml), model.controlNamespace);
+					newZip.file("control/" + controlName + "Renderer.js", sSeperateControl);
+				}
 				return [newZip, model];
 			});
 
