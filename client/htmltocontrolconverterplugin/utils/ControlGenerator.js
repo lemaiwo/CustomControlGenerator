@@ -117,7 +117,10 @@ sap.ui.define([
 		generateSettersFn: function () {
 			var propsSetters = [];
 			$.each(this.props, function (key, value) {
-				propsSetters.push(value.getSetterFn());
+				var sSetter = value.getSetterFn();
+				if (sSetter) {
+					propsSetters.push(sSetter);
+				}
 			});
 			return propsSetters.join(",");
 		},
@@ -177,7 +180,10 @@ sap.ui.define([
 					return aMapping._name === sTempPropName;
 				});
 			}
-			var p = new Property(sTempPropName, aFoundName && aFoundName.length > 0 ? aFoundName[0].value : sTempPropName);
+			var p = new Property(sTempPropName, aFoundName && aFoundName.length > 0 && aFoundName[0].value ? aFoundName[0].value :
+				sTempPropName, aFoundName &&
+				aFoundName.length > 0 ? aFoundName[0]._type : "string", false, aFoundName && aFoundName.length > 0 ? aFoundName[0]._generateSetter :
+				true);
 			this.props.push(p);
 			return "oRm.writeEscaped(oControl." + p.generateFnName("get") + "());";
 		},
@@ -192,7 +198,9 @@ sap.ui.define([
 					return aMapping._name === sTempAttrName;
 				});
 			}
-			var p = new Property(sTempAttrName, aFoundName && aFoundName.length > 0 ? aFoundName[0].value : sTempAttrName);
+			var p = new Property(sTempAttrName, aFoundName && aFoundName.length > 0 && aFoundName[0].value ? aFoundName[0].value :
+				sTempAttrName, "string", true,
+				aFoundName && aFoundName.length > 0 ? aFoundName[0]._generateSetter : true);
 			this.props.push(p);
 			return "oRm.writeAttributeEscaped(\"" + attr + "\",oControl." + p.generateFnName("get") + "());";
 		},

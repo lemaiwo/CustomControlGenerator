@@ -1,5 +1,24 @@
 {
 	"UI5Control": {
+		"TypesCollection": [{
+			"name": "string",
+			"value": "string"
+		}, {
+			"name": "int",
+			"value": "int"
+		}, {
+			"name": "float",
+			"value": "float"
+		}, {
+			"name": "boolean",
+			"value": "boolean"
+		}, {
+			"name": "object",
+			"value": "object"
+		}, {
+			"name": "any",
+			"value": "any"
+		}],
 		"parameters": {
 			"namespace": {
 				"type": "string",
@@ -39,8 +58,7 @@
 			"type": "templateCustomizationStep",
 			"groups": [{
 				"title": "emptyMobileProject_model_form_group_title",
-				"parameters": ["@UI5Control.parameters.namespace", "@UI5Control.parameters.name","@UI5Control.parameters.renderer"
-				]
+				"parameters": ["@UI5Control.parameters.namespace", "@UI5Control.parameters.name", "@UI5Control.parameters.renderer"]
 			}]
 		}]
 	}

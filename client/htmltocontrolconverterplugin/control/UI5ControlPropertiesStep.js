@@ -28,14 +28,34 @@ define(["sap.watt.ideplatform.template/ui/wizard/WizardStepContent",
 				var me = this;
 				//core step which creates all UI elements and its logic.
 				var oColTemplate1 = new sap.ui.table.Column({
-					width:"50%",
+					width:"30%",
 					label:  new sap.m.Label({text:"Generated name"}),
 					template: [new sap.m.Text({
 						text: "{_name}"
 					})]
 				});
+				var oColTemplateSetter = new sap.ui.table.Column({
+					width:"10%",
+					label:  new sap.m.Label({text:"Setter"}),
+					template: [new sap.m.Switch({
+						state:"{_generateSetter}"
+					})]
+				});
+				var oColTemplateType = new sap.ui.table.Column({
+					width:"20%",
+					label:  new sap.m.Label({text:"Type"}),
+					template: [new sap.m.Select({
+						width:"100%",
+						enabled:"{= !${_typeIsFixed} }",
+						selectedKey:"{_type}",
+						items:{
+							path:"/UI5Control/TypesCollection",
+							template: new sap.ui.core.Item({key:"{name}",text:"{value}"})
+						}
+					})]
+				});
 				var oColTemplate2 = new sap.ui.table.Column({
-					width:"50%",
+					width:"40%",
 					label:  new sap.m.Label({text:"Custom name"}),
 					template: [new sap.m.Input({
 						value: "{value}"
@@ -46,7 +66,7 @@ define(["sap.watt.ideplatform.template/ui/wizard/WizardStepContent",
 						path: "/Properties",
 					},
 					selectionMode:"None",
-					columns:[oColTemplate1,oColTemplate2]
+					columns:[oColTemplate1,oColTemplateSetter,oColTemplateType,oColTemplate2]
 				});
 				return oTable;
 
